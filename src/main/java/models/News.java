@@ -17,11 +17,13 @@ public class News {
         this.categoryId = categoryId;
     }
 
+
     @Override
     public String toString() {
         return "News{" +
                 "id=" + id +
                 ", text='" + text + '\'' +
+                ", categoryId=" + categoryId +
                 '}';
     }
 }

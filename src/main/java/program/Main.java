@@ -1,7 +1,9 @@
 package program;
 
 import CRUD.CRUD_Category;
+import CRUD.CRUD_News;
 import models.Categories;
+import models.News;
 
 import java.awt.*;
 import java.sql.Connection;
@@ -13,19 +15,31 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         String strConn = "jdbc:mariadb://localhost:3306/news";
+        // Накатать таблицы
         //CreateTBL_DB(strConn);
-        System.out.println("Successful connection");
+        //System.out.println("Successful connection");
 
         // CRUD для категорій
-        CRUD_Category category = new CRUD_Category();
+//        CRUD_Category category = new CRUD_Category();
+//
+//        category.InsertIntoDB(strConn);
+//        List<Categories> list = category.SelectFromDB(strConn);
+//        category.PrintCategoriesList(list);
+//        category.UpdateForDB(strConn);
+//        category.PrintCategoriesList(category.SelectFromDB(strConn));
+//        category.DeleteFromDB(strConn);
+//        category.PrintCategoriesList(category.SelectFromDB(strConn));
 
-        category.InsertIntoDB(strConn);
-        List<Categories> list = category.SelectFromDB(strConn);
-        category.PrintCategoriesList(list);
-        category.UpdateForDB(strConn);
-        category.PrintCategoriesList(category.SelectFromDB(strConn));
-        category.DeleteFromDB(strConn);
-        category.PrintCategoriesList(category.SelectFromDB(strConn));
+        // CRUD для категорій
+        CRUD_News news = new CRUD_News();
+
+        news.InsertIntoDBNews(strConn);
+        List<News> listNews = news.SelectFromDBNews(strConn);
+        news.PrintNewsList(listNews);
+        news.UpdateForDBNews(strConn);
+        news.PrintNewsList(news.SelectFromDBNews(strConn));
+        news.DeleteFromDB(strConn);
+        news.PrintNewsList(news.SelectFromDBNews(strConn));
 
 
     }
